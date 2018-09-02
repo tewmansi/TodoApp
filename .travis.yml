@@ -15,3 +15,16 @@ before_script:
 
 script:
   - ng build --prod --aot
+
+before-deploy:
+  - git config --local user.name tewmansi
+  - git config --local user.email mansi.tewari@gmail.com
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+      
+deploy:
+  provider: releases
+  skip-cleanup: true
+  api-key: 845e324ee9f339b26f1347f9f8b96e1dbf1e6710
+  keep-history: true
+  file_glob: true
+  file: dist/**/*  
