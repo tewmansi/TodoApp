@@ -24,7 +24,7 @@ before-deploy:
 deploy:
   provider: releases
   skip-cleanup: true
-  api-key: 845e324ee9f339b26f1347f9f8b96e1dbf1e6710
+  api-key: '$GITHUB_API_KEY'
   keep-history: true
   file_glob: true
   file: dist/**/*  
