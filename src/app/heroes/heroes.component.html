@@ -1,0 +1,16 @@
+<h2>All my heroes</h2>
+<div>
+  <label> Hero name:
+      <input #heroName/>
+    </label> 
+    <button (click) = "addNewHero(heroName.value);heroName.value=''">Add this hero</button>  
+</div>
+<ul class="heroes">
+  <li *ngFor="let lhero of myHeroes">
+    <a routerLink="/detail/{{lhero.id}}">
+    <span class="badge">{{lhero.id}}</span> {{lhero.name}}
+  </a>
+  </li>
+</ul>
+
+<!-- <app-hero-detail [selectedHero]=selectedHero></app-hero-detail> -->
